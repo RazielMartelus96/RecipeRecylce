@@ -1,10 +1,8 @@
 package io.curiositycore.reciperecylce.listeners;
 
 import io.curiositycore.reciperecylce.model.RecyclableManager;
-import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.ItemStack;
