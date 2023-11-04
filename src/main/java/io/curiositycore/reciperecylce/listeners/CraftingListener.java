@@ -11,7 +11,16 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.Set;
 
+/**
+ * Listener responsible for listening to crafting events and executing the appropriate recycling logic.
+ */
 public class CraftingListener implements Listener {
+
+    /**
+     * Listens to inventory click events, executing functionality if the click event results in a craftable item being
+     * created.
+     * @param event The click event.
+     */
     @EventHandler
     public void onCraft(InventoryClickEvent event){
         if(event.getCurrentItem() == null){

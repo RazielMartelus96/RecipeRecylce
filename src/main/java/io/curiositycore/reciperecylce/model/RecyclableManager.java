@@ -81,6 +81,11 @@ public class RecyclableManager {
 
     }
 
+    /**
+     * Adds the given item to the set of recycled items.
+     * @param recycledItems The set of recycled items
+     * @param itemStackToAdd The item to add to the set
+     */
     private void addItemToSet(Set<ItemStack> recycledItems, ItemStack itemStackToAdd){
         if(recycledItems.contains(itemStackToAdd)){
             addExistingItemToStack(itemStackToAdd, recycledItems);
@@ -90,6 +95,11 @@ public class RecyclableManager {
         }
     }
 
+    /**
+     * Adds to the amount of an existing item in the given set.
+     * @param itemStack The item to add to the set
+     * @param recycledItems The set of recycled items
+     */
     private void addExistingItemToStack(ItemStack itemStack, Set<ItemStack> recycledItems){
         recycledItems
                 .stream()

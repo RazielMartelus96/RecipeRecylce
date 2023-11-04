@@ -1,26 +1,36 @@
 import be.seeseemelk.mockbukkit.MockBukkit;
 import be.seeseemelk.mockbukkit.ServerMock;
 import be.seeseemelk.mockbukkit.WorldMock;
-import be.seeseemelk.mockbukkit.block.BlockMock;
 import be.seeseemelk.mockbukkit.entity.PlayerMock;
-import be.seeseemelk.mockbukkit.inventory.InventoryMock;
 import be.seeseemelk.mockbukkit.inventory.WorkbenchInventoryMock;
 import io.curiositycore.reciperecylce.RecipeRecylce;
 import org.bukkit.Material;
-import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.inventory.ClickType;
-import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.inventory.ItemStack;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
-public class ExampleTest {
+/**
+ * Tests for the crafting functionality of the plugin.
+ */
+public class CraftingTests {
+    /**
+     * Mocks that represents the server.
+     */
     private ServerMock serverMock;
+    /**
+     * Mock that represents the world.
+     */
     private WorldMock worldMock;
+    /**
+     * Mock that represents a player.
+     */
     private PlayerMock playerMock;
 
+    /**
+     * Sets up testing by initialising a mock server, world, player and initialising the plugin.
+     */
     @Before
     public void setUp(){
         this.serverMock = MockBukkit.getOrCreateMock();
@@ -30,6 +40,10 @@ public class ExampleTest {
         MockBukkit.load(RecipeRecylce.class);
     }
 
+    /**
+     * Tests that, if a player crafts a recipe utilising a recycable item, the correct return item-type is added to the
+     * player's inventory.
+     */
     @Test
     public void testFurnaceCraftingEvent() {
         WorkbenchInventoryMock workbenchInventoryMock = new WorkbenchInventoryMock(this.playerMock);
@@ -45,6 +59,10 @@ public class ExampleTest {
         Assert.assertEquals(Material.GRASS_BLOCK, this.playerMock.getInventory().getItem(0).getType());
     }
 
+    /**
+     * Tests that, if a player crafts a recipe utilising a recycable item, the correct amount of return items are added
+     * to the player's inventory.
+     */
     @Test
     public void testFurnaceCraftingEventAmountCheck() {
         WorkbenchInventoryMock workbenchInventoryMock = new WorkbenchInventoryMock(this.playerMock);
