@@ -21,6 +21,9 @@ public class CraftingListener implements Listener {
      */
     @EventHandler
     public void onCraft(InventoryClickEvent event){
+        if(event.getClickedInventory() == null){
+            return;
+        }
         if(event.getCurrentItem() == null){
             return;
         }
