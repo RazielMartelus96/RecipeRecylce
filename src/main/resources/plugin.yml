@@ -1,0 +1,4 @@
+name: RecipeRecylce
+version: '${project.version}'
+main: io.curiositycore.reciperecylce.RecipeRecylce
+api-version: 1.20
